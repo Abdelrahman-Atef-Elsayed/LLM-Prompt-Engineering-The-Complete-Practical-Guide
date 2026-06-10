@@ -190,9 +190,8 @@ The **context window** is the maximum number of tokens the model can process in 
 Research shows LLMs perform best on content at the **start** and **end** of the context. Information buried in the middle is often missed.
 
 ```
-Context:  [A][B][C][D][E][F][G][H][I][J]
-Attention:  ↑ high           ↑ high
-                    ↑ low (middle)
+Context:  [A][B][C][D][E][F][G][H][I][J][K][L][M][O][P]
+Attention:  ↑ high       ↑ low (middle)       ↑ high
 ```
 
 > 💡 **Practical tip:** Put the most important instructions at the **beginning** of your prompt, and reinforce key constraints at the **end**.
@@ -228,12 +227,12 @@ while not done:
 
 ### Key Parameters That Control Output
 
-| Parameter | What It Does | Low Value | High Value |
-|-----------|-------------|-----------|------------|
-| **Temperature** | Controls randomness | Deterministic, focused | Creative, varied |
-| **Top-p** | Limits token pool by probability mass | Only top picks | Wider variety |
-| **Top-k** | Limits to top K tokens | Very focused | More diverse |
-| **Max tokens** | Maximum output length | Short answers | Long answers |
+| Parameter       | What It Does                          | Low Value              | High Value       |
+|-----------------|---------------------------------------|------------------------|------------------|
+| **Temperature** | Controls randomness                   | Deterministic, focused | Creative, varied |
+| **Top-p**       | Limits token pool by probability mass | Only top picks         | Wider variety    |
+| **Top-k**       | Limits to top K tokens                | Very focused           | More diverse     |
+| **Max tokens**  | Maximum output length                 | Short answers          | Long answers     |
 
 ### Temperature in Practice
 
